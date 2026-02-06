@@ -22,3 +22,14 @@ jobs:
 
     - name: Run Tests
       run: npm test  
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Production
+        run: |
+          echo "Deploying Application.."
+          echo "Simulating upload to server.."
+          sleep 5 # Pretend is takes time
+          echo "Deployment successful!"
